@@ -43,6 +43,7 @@ body {
 
 		background-image: url("../assets/header-backdrop.jpg");
 		background-size: cover;
+		background-position: center bottom;
 
 		@media screen and (max-width: 1000px) {
 			padding: 1.5em;
