@@ -1,16 +1,20 @@
-### Hi there 👋
+# Aardhyn Lavender
+### *Second Year BIT Student*
 
-<!--
-**AardhynLavender/AardhynLavender** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<br/>
 
-Here are some ideas to get you started:
+### [< My Site >](https://#)<sup>*coming soon!*</sup>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<br/>
+
+### *Howdy!*
+
+*I'm a computer science and programming enthusiast with a passion for Software Engineering and Game Development. I'm right at home in **C/C++**, **C#**, **Typescript** and more. I Use **Vim** and emulators for Vim in **Visual Studio Code**, and **CLion**.*
+
+</br>
+
+<br/>
+
+***Thanks for droping by my cozy corner of the net 😁***
+
+*:wq*
