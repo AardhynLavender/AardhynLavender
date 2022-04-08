@@ -8,10 +8,9 @@ function App(): ReactElement {
 				<section className="projects">
 					<ul>
 						<li>Breakout</li>
-						<li>Node REST API</li>
-						<li>Pacman</li>
+						<li>REST API</li>
 						<li>React CRUD</li>
-						<li>Upcoming</li>
+						<li id="highlight">Upcoming</li>
 					</ul>
 				</section>
 				<section className="heading">

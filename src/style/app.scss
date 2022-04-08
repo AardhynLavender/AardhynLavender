@@ -7,6 +7,10 @@ $contentWidth: 600px;
 	font-size: 1em;
 }
 
+::selection {
+	background-color: transparentize($background, 0.5);
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
@@ -28,6 +32,7 @@ p {
 
 body {
 	background-color: $background;
+
 	margin: 0;
 	padding: 0;
 
@@ -35,22 +40,34 @@ body {
 		display: flex;
 		flex-direction: column;
 
+		box-sizing: border-box;
+
 		height: 100vh;
 		min-height: 500px;
-
-		padding: 3em;
-		box-sizing: border-box;
 
 		background-image: url("../assets/header-backdrop.jpg");
 		background-size: cover;
 		background-position: center bottom;
 
-		@media screen and (max-width: 1000px) {
-			padding: 1.5em;
-		}
-
 		section {
 			width: 100%;
+			box-sizing: border-box;
+
+			$dark: #000000a0;
+			$light: #00000000;
+
+			padding: 3em;
+			@media screen and (max-width: 500px) {
+				padding: 1em;
+			}
+
+			&.projects {
+				background: linear-gradient($dark, $light);
+			}
+
+			&.details {
+				background: linear-gradient($light, $dark);
+			}
 
 			ul {
 				padding: 0;
@@ -62,15 +79,18 @@ body {
 				width: 100%;
 				overflow: scroll;
 
-				@media screen and (max-width: 1000px) {
+				@media screen and (max-width: 500px) {
+					justify-content: space-between;
 				}
 
 				li {
 					color: $light-foreground;
 					font-family: $stdfont;
 					font-size: 0.8rem;
-					font-weight: 300;
+					font-weight: 600;
 					list-style: none;
+
+					cursor: pointer;
 
 					display: flex;
 					flex-wrap: wrap;
@@ -81,6 +101,10 @@ body {
 
 					@media screen and (max-width: 1000px) {
 						font-size: 0.6rem;
+					}
+
+					&#highlight {
+						color: $accent;
 					}
 
 					span#progression {
@@ -94,7 +118,7 @@ body {
 				}
 			}
 
-			&.details li:last-of-type {
+			li:last-of-type {
 				margin-left: auto;
 			}
 
@@ -109,14 +133,28 @@ body {
 					display: flex;
 					gap: 1em;
 
+					@media screen and (max-width: 600px) {
+						justify-content: center;
+					}
+
 					button {
+						background-color: #00000060;
+						color: $foreground;
+
 						border: none;
 						border-radius: 1em;
+
 						height: 2em;
 						width: 6em;
 
 						&.favicon {
 							width: 2em;
+						}
+
+						transition: all 400ms ease-out;
+						&:hover {
+							transition: all 50ms ease-in;
+							background-color: $accent;
 						}
 					}
 				}
@@ -128,12 +166,15 @@ body {
 					font-weight: 600;
 					font-size: 5rem;
 
+					text-shadow: 0 0 20px #00000080;
+
 					transition: all 100ms ease-in-out;
 
 					@media screen and (max-width: 1000px) {
 						font-size: 3rem;
 						@media screen and (max-width: 600px) {
-							font-size: 1.5em;
+							text-align: center;
+							font-size: 2em;
 						}
 					}
 				}
