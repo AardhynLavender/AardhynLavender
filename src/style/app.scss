@@ -1,7 +1,7 @@
 @import "color";
 @import "typography";
 
-$contentWidth: 600px;
+$contentWidth: 1200px;
 
 :root {
 	font-size: 1em;
@@ -84,7 +84,7 @@ body {
 				}
 
 				li {
-					color: $light-foreground;
+					color: $dark-foreground;
 					font-family: $stdfont;
 					font-size: 0.8rem;
 					font-weight: 600;
@@ -138,6 +138,9 @@ body {
 					}
 
 					button {
+						font-family: $stdfont;
+						font-weight: 300;
+
 						background-color: #00000060;
 						color: $foreground;
 
@@ -145,7 +148,7 @@ body {
 						border-radius: 1em;
 
 						height: 2em;
-						width: 6em;
+						width: 8em;
 
 						&.favicon {
 							width: 2em;
@@ -164,7 +167,7 @@ body {
 					color: $foreground;
 					font-family: $stdfont;
 					font-weight: 600;
-					font-size: 5rem;
+					font-size: 4rem;
 
 					text-shadow: 0 0 20px #00000080;
 
@@ -179,6 +182,115 @@ body {
 					}
 				}
 			}
+		}
+	}
+
+	main {
+		color: $foreground;
+
+		display: flex;
+		flex-direction: column;
+		gap: 10em;
+
+		width: calc(100% - 2em);
+		max-width: $contentWidth;
+		margin-inline: auto;
+
+		section {
+			&#projects {
+				display: flex;
+				flex-direction: column;
+				gap: 1em;
+
+				.gallery {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					justify-content: center;
+					flex: 0 0;
+					gap: 1em;
+
+					// @media screen and (max-width: 1000px) {
+					// 	flex-direction: column;
+					// }
+
+					article {
+						width: calc(33.33% - 0.75em);
+						min-width: 300px;
+						height: 500px;
+
+						background-color: lighten($background, 4%);
+						border-radius: 1em;
+
+						.banner {
+							width: 100%;
+							height: 150px;
+							background-image: url("../assets/header-backdrop.jpg");
+							background-size: cover;
+							background-position: center center;
+							border-radius: 1em 1em 0 0;
+						}
+
+						.content {
+							padding: 1em;
+						}
+
+						box-sizing: border-box;
+
+						transform: none;
+						transition: box-shadow 500ms ease-in-out,
+							transform 500ms ease-in-out;
+						&:hover {
+							transition: box-shadow 50ms ease-in-out,
+								transform 50ms ease-in-out;
+							transform: translateY(-5px);
+							box-shadow: 0 0 10px 1em darken($background, 2%);
+						}
+					}
+				}
+
+				button {
+					font-family: $stdfont;
+					font-weight: 600;
+
+					background-color: #00000060;
+					color: $foreground;
+
+					width: 9em;
+					height: 3em;
+					align-self: center;
+
+					border: none;
+					border-radius: 1.5em;
+
+					transition: all 400ms ease-out;
+					&:hover {
+						transition: all 50ms ease-in;
+						background-color: $accent;
+					}
+				}
+			}
+		}
+
+		h2 {
+			font-size: 2rem;
+			font-family: $stdfont;
+			font-weight: 600;
+		}
+
+		h3 {
+			margin: 0 0 1em 0;
+			color: $accent;
+			font-size: 1.2rem;
+			font-family: $stdfont;
+			font-weight: 600;
+		}
+
+		p {
+			font-size: 1rem;
+			font-family: $stdparagraph;
+			color: $dark-foreground;
+			font-weight: 300;
 		}
 	}
 }
