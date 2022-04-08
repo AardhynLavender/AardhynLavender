@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import breakout from "../assets/breakout-project.png";
 import restApi from "../assets/restapi-project.png";
+import upcoming from "../assets/upcoming.png";
 import "../style/app.scss";
 
 function App(): ReactElement {
@@ -109,8 +110,14 @@ function App(): ReactElement {
 							<section className="details"></section>
 						</article>
 					</section>
-					<section id="upcoming"></section>
 					<button>More</button>
+				</section>
+				<section id="upcoming">
+					<h2>Upcoming</h2>
+					<section style={{ backgroundImage: `url(${upcoming})` }}>
+						<h2>Something is on its way</h2>
+						<p>And it's big. Real big.</p>
+					</section>
 				</section>
 				<section id="contact"></section>
 			</main>
