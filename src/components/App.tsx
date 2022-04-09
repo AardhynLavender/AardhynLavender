@@ -1,7 +1,12 @@
 import React, { ReactElement } from "react";
 import breakout from "../assets/breakout-project.png";
 import restApi from "../assets/restapi-project.png";
+import whitelogo from "../assets/logo_w.png";
 import upcoming from "../assets/upcoming.png";
+import linkedin from "../assets/linkedin_logo.png";
+import github from "../assets/github_logo.png";
+import mail from "../assets/mail.png";
+
 import "../style/app.scss";
 
 function App(): ReactElement {
@@ -115,13 +120,32 @@ function App(): ReactElement {
 				<section id="upcoming">
 					<h2>Upcoming</h2>
 					<section style={{ backgroundImage: `url(${upcoming})` }}>
-						<h2>Something is on its way</h2>
+						<h2>Something's on its way</h2>
 						<p>And it's big. Real big.</p>
 					</section>
 				</section>
 				<section id="contact"></section>
 			</main>
-			<footer></footer>
+			<footer>
+				<img src={whitelogo} />
+				<section className="favicons">
+					<a
+						href="https://github.com/AardhynLavender"
+						target="_blank"
+					>
+						<img src={github} alt="icon link to github" />
+					</a>
+					<a
+						href="https://www.linkedin.com/in/aardhyn-lavender-521007226/"
+						target="_blank"
+					>
+						<img src={linkedin} alt="icon link to linkedin" />
+					</a>
+					<a href="#contact">
+						<img src={mail} alt="icon link to contact form" />
+					</a>
+				</section>
+			</footer>
 		</div>
 	);
 }
