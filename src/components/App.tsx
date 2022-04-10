@@ -1,5 +1,5 @@
-import React, { ReactElement } from "react";
-import header from "../assets/header-backdrop.jpg";
+import React, { ReactElement, useRef } from "react";
+import react from "../assets/reactLogo.png";
 import headerTwo from "../assets/header-backdrop-two.jpg";
 import breakout from "../assets/breakout-project.png";
 import restApi from "../assets/restapi-project.png";
@@ -13,41 +13,93 @@ import mail from "../assets/mail.png";
 import "../style/app.scss";
 
 function App(): ReactElement {
+	const references: Record<string, React.MutableRefObject<any>> = {
+		present: useRef(null),
+		projects: useRef(null),
+		contact: useRef(null),
+		upcoming: useRef(null),
+	};
+
+	const ScrollTo = (ref: React.MutableRefObject<any>): void =>
+		ref?.current?.scrollIntoView();
+
 	return (
 		<div className="App">
 			<header>
 				<section className="projects">
 					<ul>
-						<li>Breakout</li>
-						<li>REST API</li>
-						<li>React CRUD</li>
-						<li id="highlight">Upcoming</li>
+						<li>
+							<a
+								href="https://github.com/AardhynLavender/WinFormsBreakout"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Breakout
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://github.com/AardhynLavender/404"
+								target="_blank"
+								rel="noreferrer"
+							>
+								REST API
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://github.com/AardhynLavender/404"
+								target="_blank"
+								rel="noreferrer"
+							>
+								React CRUD
+							</a>
+						</li>
+						<li
+							className="highlight"
+							role="button"
+							onClick={() => ScrollTo(references.upcoming)}
+						>
+							Upcoming
+						</li>
 					</ul>
 				</section>
 				<section className="heading">
 					<h1>Aardhyn Lavender</h1>
 					<nav>
-						<button>Projects</button>
-						<button>Present</button>
-						<button>Contact</button>
+						<button onClick={() => ScrollTo(references.projects)}>
+							Projects
+						</button>
+						<button onClick={() => ScrollTo(references.present)}>
+							Present
+						</button>
+						<button onClick={() => ScrollTo(references.contact)}>
+							Contact
+						</button>
 					</nav>
 				</section>
 				<section className="details">
 					<ul>
 						<li>
+							<img src={react} alt="react.js logo" />
 							<a
 								href="https://github.com/AardhynLavender/AardhynLavender"
 								target="_blank"
+								rel="noreferrer"
 							>
 								View Source
 							</a>
 						</li>
 						<li>
-							<p>BIT</p>
+							<p>BIT Y2 S1</p>
 							<span id="progression"></span>
 						</li>
 						<li>
-							<a href="https://unsplash.com/@godfrey15?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+							<a
+								href="https://unsplash.com/@godfrey15?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+								target="_blank"
+								rel="noreferrer"
+							>
 								Photo Credit
 							</a>
 						</li>
@@ -55,7 +107,7 @@ function App(): ReactElement {
 				</section>
 			</header>
 			<main>
-				<section id="projects">
+				<section id="projects" ref={references.projects}>
 					<h2>Projects</h2>
 					<section className="gallery">
 						<article id="Breakout">
@@ -70,8 +122,10 @@ function App(): ReactElement {
 								<p>
 									First year programming assignment built with
 									C# and WinForms, awarding a grade of{" "}
-									{/* prettier-ignore */}
-									<b> 108<sup>%</sup></b>
+									<b>
+										{" "}
+										108<sup>%</sup>
+									</b>
 									<br />
 									<br />I went above and beyond the brief to
 									build fun and engaging deviation of Breakout
@@ -117,9 +171,15 @@ function App(): ReactElement {
 							<section className="details"></section>
 						</article>
 					</section>
-					<button>More</button>
+					<a
+						href="https://github.com/AardhynLavender?tab=repositories"
+						target="_blank"
+						rel="noreferrer"
+					>
+						More
+					</a>
 				</section>
-				<section id="present">
+				<section id="present" ref={references.present}>
 					<h2>Present</h2>
 					<article>
 						<section
@@ -163,6 +223,7 @@ function App(): ReactElement {
 								<a
 									href="https://github.com/AardhynLavender"
 									target="_blank"
+									rel="noreferrer"
 								>
 									<img
 										src={github}
@@ -172,23 +233,24 @@ function App(): ReactElement {
 								<a
 									href="https://www.linkedin.com/in/aardhyn-lavender-521007226/"
 									target="_blank"
+									rel="noreferrer"
 								>
 									<img
 										src={linkedin}
 										alt="icon link to linkedin"
 									/>
 								</a>
-								<a href="#contact">
-									<img
-										src={mail}
-										alt="icon link to contact form"
-									/>
-								</a>
+								<img
+									role="button"
+									src={mail}
+									alt="icon link to contact form"
+									onClick={() => ScrollTo(references.contact)}
+								/>
 							</section>
 						</section>
 					</article>
 				</section>
-				<section id="contact">
+				<section id="contact" ref={references.contact}>
 					<h2>Contact</h2>
 					<section>
 						<p>
@@ -200,14 +262,13 @@ function App(): ReactElement {
 						</p>
 					</section>
 				</section>
-				<section id="upcoming">
+				<section id="upcoming" ref={references.upcoming}>
 					<h2>Upcoming</h2>
 					<section style={{ backgroundImage: `url(${upcoming})` }}>
 						<h2>Something's on its way</h2>
 						<p>And it's big. Real big.</p>
 					</section>
 				</section>
-				<section id="contact"></section>
 			</main>
 			<footer>
 				<img src={whitelogo} />
@@ -215,18 +276,23 @@ function App(): ReactElement {
 					<a
 						href="https://github.com/AardhynLavender"
 						target="_blank"
+						rel="noreferrer"
 					>
 						<img src={github} alt="icon link to github" />
 					</a>
 					<a
 						href="https://www.linkedin.com/in/aardhyn-lavender-521007226/"
 						target="_blank"
+						rel="noreferrer"
 					>
 						<img src={linkedin} alt="icon link to linkedin" />
 					</a>
-					<a href="#contact">
-						<img src={mail} alt="icon link to contact form" />
-					</a>
+					<img
+						role="button"
+						src={mail}
+						alt="icon link to contact form"
+						onClick={() => ScrollTo(references.contact)}
+					/>
 				</section>
 			</footer>
 		</div>

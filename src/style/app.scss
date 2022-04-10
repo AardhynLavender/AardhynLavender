@@ -22,6 +22,10 @@ p {
 	margin: 0;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 * {
 	scrollbar-width: none;
 	overflow: -moz-scrollbars-none;
@@ -91,21 +95,34 @@ body {
 					font-weight: 600;
 					list-style: none;
 
-					cursor: pointer;
-
 					display: flex;
-					flex-wrap: wrap;
-					flex-shrink: 0;
-					flex-grow: 0;
 					align-items: center;
+
+					height: 2em;
+
 					gap: 1em;
+
+					img {
+						height: 1.2em;
+					}
+
+					a,
+					&[role="button"] {
+						cursor: pointer;
+						transition: all 500ms ease-in-out;
+						&:hover {
+							transition: all 50ms ease-in-out;
+							color: $accent;
+							text-shadow: 0 0 5px $accent;
+						}
+					}
 
 					@media screen and (max-width: 1000px) {
 						font-size: 0.6rem;
 					}
 
-					&#highlight {
-						color: $accent;
+					&.highlight {
+						color: $foreground;
 					}
 
 					span#progression {
@@ -140,7 +157,7 @@ body {
 
 					button {
 						font-family: $stdfont;
-						font-weight: 300;
+						font-weight: 600;
 
 						background-color: #00000060;
 						color: $foreground;
@@ -320,16 +337,20 @@ body {
 					}
 				}
 
-				button {
+				a {
 					font-family: $stdfont;
 					font-weight: 600;
 
 					background-color: #00000060;
 					color: $foreground;
 
-					width: 9em;
-					height: 3em;
+					width: 8em;
+					height: 2.5em;
 					align-self: center;
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
 
 					border: none;
 					border-radius: 1.5em;
@@ -464,8 +485,13 @@ body {
 		display: flex;
 		gap: 1em;
 
-		img {
+		img,
+		button {
 			height: 1.5em;
+			width: 1.5em;
+			border: none;
+
+			padding: 0;
 		}
 	}
 }
