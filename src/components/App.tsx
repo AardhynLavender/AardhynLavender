@@ -188,6 +188,18 @@ function App(): ReactElement {
 						</section>
 					</article>
 				</section>
+				<section id="contact">
+					<h2>Contact</h2>
+					<section>
+						<p>
+							A <b>Contact Form</b> would look real nice here...
+						</p>
+						<br />
+						<p>
+							<i>( Psst! its on it's way... )</i>
+						</p>
+					</section>
+				</section>
 				<section id="upcoming">
 					<h2>Upcoming</h2>
 					<section style={{ backgroundImage: `url(${upcoming})` }}>

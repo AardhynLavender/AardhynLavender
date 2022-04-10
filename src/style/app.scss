@@ -342,6 +342,20 @@ body {
 				}
 			}
 
+			&#contact {
+				section {
+					background-color: lighten($background, 4%);
+
+					padding: 3em;
+
+					border-radius: 1em;
+
+					@media screen and (max-width: 600px) {
+						padding: 2em;
+					}
+				}
+			}
+
 			&#upcoming {
 				display: flex;
 				flex-direction: column;
