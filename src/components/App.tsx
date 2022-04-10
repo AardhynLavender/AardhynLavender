@@ -1,6 +1,9 @@
 import React, { ReactElement } from "react";
+import header from "../assets/header-backdrop.jpg";
+import headerTwo from "../assets/header-backdrop-two.jpg";
 import breakout from "../assets/breakout-project.png";
 import restApi from "../assets/restapi-project.png";
+import portrait from "../assets/portrait.png";
 import whitelogo from "../assets/logo_w.png";
 import upcoming from "../assets/upcoming.png";
 import linkedin from "../assets/linkedin_logo.png";
@@ -25,7 +28,7 @@ function App(): ReactElement {
 					<h1>Aardhyn Lavender</h1>
 					<nav>
 						<button>Projects</button>
-						<button>About</button>
+						<button>Present</button>
 						<button>Contact</button>
 					</nav>
 				</section>
@@ -52,7 +55,75 @@ function App(): ReactElement {
 				</section>
 			</header>
 			<main>
-				<section id="about"></section>
+				<section id="present">
+					<h2>Present</h2>
+					<article>
+						<section
+							className="banner"
+							style={{ backgroundImage: `url(${headerTwo})` }}
+						>
+							<img src={portrait} alt="Its me!" />
+						</section>
+						<section className="content">
+							<h3>Hello, World!</h3>
+							<p>
+								<strong>
+									I'm a computer science and programming
+									enthusiast with a passion for Software
+									Engineering and Game Development. At present
+									studying my second year of the
+									<i> Bachelor of Information Technology </i>
+									at Otago Polytechnic in New Zealand.
+								</strong>
+							</p>
+							<p>
+								This semester we're covering web-based software
+								and API development, relational database design
+								though to construction, and operating system
+								concepts and engineering.
+							</p>
+							<p>
+								I'm right at home in C/C++, C#, and Typescript.
+								I use Vim - and emulators for Vim in IDEs such
+								as Visual Studio Code, and CLion. I work on
+								Windows 11 (primarily), and MacOS/Linux based
+								systems.
+							</p>
+							<p>
+								<i>
+									Thanks for dropping by my cozy corner of the
+									net!
+								</i>
+							</p>
+							<section className="favicons">
+								<a
+									href="https://github.com/AardhynLavender"
+									target="_blank"
+								>
+									<img
+										src={github}
+										alt="icon link to github"
+									/>
+								</a>
+								<a
+									href="https://www.linkedin.com/in/aardhyn-lavender-521007226/"
+									target="_blank"
+								>
+									<img
+										src={linkedin}
+										alt="icon link to linkedin"
+									/>
+								</a>
+								<a href="#contact">
+									<img
+										src={mail}
+										alt="icon link to contact form"
+									/>
+								</a>
+							</section>
+						</section>
+					</article>
+				</section>
 				<section id="projects">
 					<h2>Projects</h2>
 					<section className="gallery">
