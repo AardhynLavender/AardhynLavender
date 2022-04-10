@@ -55,6 +55,70 @@ function App(): ReactElement {
 				</section>
 			</header>
 			<main>
+				<section id="projects">
+					<h2>Projects</h2>
+					<section className="gallery">
+						<article id="Breakout">
+							<div
+								className="banner"
+								style={{
+									backgroundImage: `url(${breakout})`,
+								}}
+							></div>
+							<section className="content">
+								<h3>Breakout</h3>
+								<p>
+									First year programming assignment built with
+									C# and WinForms, awarding a grade of{" "}
+									{/* prettier-ignore */}
+									<b> 108<sup>%</sup></b>
+									<br />
+									<br />I went above and beyond the brief to
+									build fun and engaging deviation of Breakout
+									I'll be proud of for years to come!
+								</p>
+							</section>
+							<section className="details"></section>
+						</article>
+						<article id="restApi">
+							<div
+								className="banner"
+								style={{
+									backgroundImage: `url(${restApi})`,
+								}}
+							></div>
+							<section className="content">
+								<h3>REST API</h3>
+								<p>
+									Node.js REST API built with TypeScript,
+									Express, with data stored on MongoDB.
+									<br />
+									<br />
+									Provides standard CRUD operations,
+									filtering, sorting, pagination, as well as
+									authentication and rate limiting.
+								</p>
+							</section>
+							<section className="details"></section>
+						</article>
+						<article id="React CRUD">
+							<div className="banner"></div>
+							<section className="content">
+								<h3>React CRUD</h3>
+								<p>
+									Tidy front-end client for the aforementioned
+									backend API
+									<br />
+									<br />
+									Built with React.js, Typescript, Reactstrap,
+									plus a dash of Sass.
+								</p>
+							</section>
+							<section className="details"></section>
+						</article>
+					</section>
+					<button>More</button>
+				</section>
 				<section id="present">
 					<h2>Present</h2>
 					<article>
@@ -123,70 +187,6 @@ function App(): ReactElement {
 							</section>
 						</section>
 					</article>
-				</section>
-				<section id="projects">
-					<h2>Projects</h2>
-					<section className="gallery">
-						<article id="Breakout">
-							<div
-								className="banner"
-								style={{
-									backgroundImage: `url(${breakout})`,
-								}}
-							></div>
-							<section className="content">
-								<h3>Breakout</h3>
-								<p>
-									First year programming assignment built with
-									C# and WinForms, awarding a grade of{" "}
-									{/* prettier-ignore */}
-									<b> 108<sup>%</sup></b>
-									<br />
-									<br />I went above and beyond the brief to
-									build fun and engaging deviation of Breakout
-									I'll be proud of for years to come!
-								</p>
-							</section>
-							<section className="details"></section>
-						</article>
-						<article id="restApi">
-							<div
-								className="banner"
-								style={{
-									backgroundImage: `url(${restApi})`,
-								}}
-							></div>
-							<section className="content">
-								<h3>REST API</h3>
-								<p>
-									Node.js REST API built with TypeScript,
-									Express, with data stored on MongoDB.
-									<br />
-									<br />
-									Provides standard CRUD operations,
-									filtering, sorting, pagination, as well as
-									authentication and rate limiting.
-								</p>
-							</section>
-							<section className="details"></section>
-						</article>
-						<article id="React CRUD">
-							<div className="banner"></div>
-							<section className="content">
-								<h3>React CRUD</h3>
-								<p>
-									Tidy front-end client for the aforementioned
-									backend API
-									<br />
-									<br />
-									Built with React.js, Typescript, Reactstrap,
-									plus a dash of Sass.
-								</p>
-							</section>
-							<section className="details"></section>
-						</article>
-					</section>
-					<button>More</button>
 				</section>
 				<section id="upcoming">
 					<h2>Upcoming</h2>
