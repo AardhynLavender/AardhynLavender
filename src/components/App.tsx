@@ -87,11 +87,11 @@ function App(): ReactElement {
 								target="_blank"
 								rel="noreferrer"
 							>
-								View Source
+								Source
 							</a>
 						</li>
 						<li>
-							<p>BIT Y2 S1</p>
+							<p>BIT</p>
 							<span id="progression"></span>
 						</li>
 						<li>
