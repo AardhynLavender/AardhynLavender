@@ -298,13 +298,16 @@ body {
 					// 	flex-direction: column;
 					// }
 
-					article {
+					// a direct decendant <article> OR <a>
+					> article,
+					> a {
 						width: calc(33.33% - 0.75em);
 						min-width: 300px;
 
 						@media screen and (max-width: 650px) {
 							min-width: 100%;
 						}
+
 						height: 500px;
 
 						background-color: lighten($background, 4%);
@@ -313,7 +316,7 @@ body {
 						.banner {
 							width: 100%;
 							height: 150px;
-							background-image: url("../assets/header-backdrop.jpg");
+							background-image: url("../assets/header-backdrop.jpg"); // default image
 							background-size: cover;
 							background-position: center center;
 							border-radius: 1em 1em 0 0;
@@ -337,7 +340,7 @@ body {
 					}
 				}
 
-				a {
+				a#more {
 					font-family: $stdfont;
 					font-weight: 600;
 

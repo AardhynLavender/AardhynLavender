@@ -12,6 +12,7 @@ import github from "../assets/github_logo.png";
 import mail from "../assets/mail.png";
 
 import "../style/app.scss";
+import Project from "./Project";
 
 function App(): ReactElement {
 	const references: Record<string, React.MutableRefObject<any>> = {
@@ -26,20 +27,30 @@ function App(): ReactElement {
 	const ScrollTo = (ref: React.MutableRefObject<any>): void =>
 		ref?.current?.scrollIntoView();
 
-	const ImageHandleScroll = (scrolled: number): void => {
-		const header: HTMLElement | null = document.querySelector("header");
-		if (header && scrolled < header.clientHeight) {
-			console.log(scrolled);
+	const ImageHandleScroll = (scrolled: number, image: string): void => {
+		const element: HTMLElement | null = document.querySelector(image);
+		if (
+			element &&
+			scrolled + window.innerHeight > element.getBoundingClientRect().top //&&
+			// scrolled <
+			// 	element.getBoundingClientRect().height +
+			// 		element.getBoundingClientRect().top
+		) {
 			const positionX: number = scrolled * scrollFactor;
-			header.style.backgroundPositionY = `${positionX}px`;
+			element.style.backgroundPositionY = `${positionX}px`;
+			console.log(positionX);
 		}
 	};
 
 	useEffect(() => {
 		const onScroll = (e: Event): void => {
-			ImageHandleScroll(window.scrollY);
+			ImageHandleScroll(window.scrollY, "header");
+			// ImageHandleScroll(window.scrollY, "section#upcoming section");
 		};
 		window.addEventListener("scroll", onScroll);
+		return () => {
+			window.removeEventListener("scroll", onScroll);
+		};
 	}, []);
 
 	return (
@@ -58,7 +69,7 @@ function App(): ReactElement {
 						</li>
 						<li>
 							<a
-								href="https://github.com/AardhynLavender/REST-API/tree/main"
+								href="https://github.com/AardhynLavender/REST-API"
 								target="_blank"
 								rel="noreferrer"
 							>
@@ -67,7 +78,7 @@ function App(): ReactElement {
 						</li>
 						<li>
 							<a
-								href="https://github.com/AardhynLavender/React-CRUD"
+								href="https://id1000096681-laveat1-react.herokuapp.com/"
 								target="_blank"
 								rel="noreferrer"
 							>
@@ -129,39 +140,27 @@ function App(): ReactElement {
 				<section id="projects" ref={references.projects}>
 					<h2>Projects</h2>
 					<section className="gallery">
-						<article id="Breakout">
-							<div
-								className="banner"
-								style={{
-									backgroundImage: `url(${breakout})`,
-								}}
-							></div>
-							<section className="content">
-								<h3>Breakout</h3>
+						<Project
+							name="Breakout"
+							image={breakout}
+							url="https://github.com/AardhynLavender/WinFormsBreakout/"
+							content={
 								<p>
 									First year programming assignment built with
-									C# and WinForms, awarding a grade of{" "}
-									<b>
-										{" "}
-										108<sup>%</sup>
-									</b>
+									C# and WinForms, awarding a grade of 108
+									<sup>%</sup>
 									<br />
 									<br />I went above and beyond the brief to
 									build fun and engaging deviation of Breakout
 									I'll be proud of for years to come!
 								</p>
-							</section>
-							<section className="details"></section>
-						</article>
-						<article id="restApi">
-							<div
-								className="banner"
-								style={{
-									backgroundImage: `url(${restApi})`,
-								}}
-							></div>
-							<section className="content">
-								<h3>REST API</h3>
+							}
+						/>
+						<Project
+							name="REST API"
+							image={restApi}
+							url="https://github.com/AardhynLavender/REST-API/"
+							content={
 								<p>
 									Node.js REST API built with TypeScript,
 									Express, with data stored on MongoDB,
@@ -172,22 +171,17 @@ function App(): ReactElement {
 									filtering, sorting, pagination, as well as
 									authentication and rate limiting.
 								</p>
-							</section>
-							<section className="details"></section>
-						</article>
-						<article id="React CRUD">
-							<div
-								className="banner"
-								style={{
-									backgroundImage: `url(${reactcrud})`,
-								}}
-							></div>
-							<section className="content">
-								<h3>React CRUD</h3>
+							}
+						/>
+						<Project
+							name="React CRUD"
+							image={reactcrud}
+							url="https://github.com/AardhynLavender/React-CRUD"
+							content={
 								<p>
 									Tidy front-end CRUD client for the
 									aforementioned backend API, meeting
-									expectations with a grade of 95.8
+									requirements with a grade of 95.8
 									<sup>%</sup>
 									<br />
 									<br />
@@ -195,14 +189,14 @@ function App(): ReactElement {
 									Reactstrap, along with Cypress Tests for the
 									authentication functionality.
 								</p>
-							</section>
-							<section className="details"></section>
-						</article>
+							}
+						/>
 					</section>
 					<a
 						href="https://github.com/AardhynLavender?tab=repositories"
 						target="_blank"
 						rel="noreferrer"
+						id="more"
 					>
 						More
 					</a>
@@ -293,8 +287,8 @@ function App(): ReactElement {
 				{/* <section id="upcoming" ref={references.upcoming}>
 					<h2>Upcoming</h2>
 					<section style={{ backgroundImage: `url(${upcoming})` }}>
-						<h2>Something's on its way</h2>
-						<p>And it's big. Real big.</p>
+						<h2>Just a little something</h2>
+						<p>Every developer needs a side-project</p>
 					</section>
 				</section> */}
 			</main>
