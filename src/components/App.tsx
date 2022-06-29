@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef } from "react";
+import React, { ReactElement, useEffect, useRef } from "react";
 import react from "../assets/reactLogo.png";
 import headerTwo from "../assets/header-backdrop-two.jpg";
 import breakout from "../assets/breakout-project.png";
@@ -20,8 +20,26 @@ function App(): ReactElement {
 		upcoming: useRef(null),
 	};
 
+	const scrollFactor: number = 0.3;
+
 	const ScrollTo = (ref: React.MutableRefObject<any>): void =>
 		ref?.current?.scrollIntoView();
+
+	const ImageHandleScroll = (scrolled: number): void => {
+		const header: HTMLElement | null = document.querySelector("header");
+		if (header && scrolled < header.clientHeight) {
+			console.log(scrolled);
+			const positionX: number = scrolled * scrollFactor;
+			header.style.backgroundPositionY = `${positionX}px`;
+		}
+	};
+
+	useEffect(() => {
+		const onScroll = (e: Event): void => {
+			ImageHandleScroll(window.scrollY);
+		};
+		window.addEventListener("scroll", onScroll);
+	}, []);
 
 	return (
 		<div className="App">
