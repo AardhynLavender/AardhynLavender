@@ -58,7 +58,7 @@ function App(): ReactElement {
 						</li>
 						<li>
 							<a
-								href="https://github.com/AardhynLavender/404"
+								href="https://github.com/AardhynLavender/REST-API/tree/main"
 								target="_blank"
 								rel="noreferrer"
 							>
