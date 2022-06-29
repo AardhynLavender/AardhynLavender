@@ -5,6 +5,7 @@ import breakout from "../assets/breakout-project.png";
 import restApi from "../assets/restapi-project.png";
 import portrait from "../assets/portrait.png";
 import whitelogo from "../assets/logo_w.png";
+import reactcrud from "../assets/reactcrud.png";
 import upcoming from "../assets/upcoming.png";
 import linkedin from "../assets/linkedin_logo.png";
 import github from "../assets/github_logo.png";
@@ -48,7 +49,7 @@ function App(): ReactElement {
 					<ul>
 						<li>
 							<a
-								href="https://github.com/AardhynLavender/WinFormsBreakout"
+								href="https://github.com/AardhynLavender/WinFormsBreakout/releases/tag/v1.0.0"
 								target="_blank"
 								rel="noreferrer"
 							>
@@ -108,10 +109,10 @@ function App(): ReactElement {
 								Source
 							</a>
 						</li>
-						<li>
+						{/* <li>
 							<p>BIT</p>
 							<span id="progression"></span>
-						</li>
+						</li> */}
 						<li>
 							<a
 								href="https://unsplash.com/@godfrey15?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
@@ -163,7 +164,8 @@ function App(): ReactElement {
 								<h3>REST API</h3>
 								<p>
 									Node.js REST API built with TypeScript,
-									Express, with data stored on MongoDB.
+									Express, with data stored on MongoDB,
+									achieving a grade of 99.7<sup>%</sup>
 									<br />
 									<br />
 									Provides standard CRUD operations,
@@ -174,16 +176,24 @@ function App(): ReactElement {
 							<section className="details"></section>
 						</article>
 						<article id="React CRUD">
-							<div className="banner"></div>
+							<div
+								className="banner"
+								style={{
+									backgroundImage: `url(${reactcrud})`,
+								}}
+							></div>
 							<section className="content">
 								<h3>React CRUD</h3>
 								<p>
-									Tidy front-end client for the aforementioned
-									backend API
+									Tidy front-end CRUD client for the
+									aforementioned backend API, meeting
+									expectations with a grade of 95.8
+									<sup>%</sup>
 									<br />
 									<br />
-									Built with React.js, Typescript, Reactstrap,
-									plus a dash of Sass.
+									Built with React.js, Typescript, and
+									Reactstrap, along with Cypress Tests for the
+									authentication functionality.
 								</p>
 							</section>
 							<section className="details"></section>
@@ -207,29 +217,29 @@ function App(): ReactElement {
 							<img src={portrait} alt="Its me!" />
 						</section>
 						<section className="content">
-							<h3>Hello, World!</h3>
 							<p>
 								<strong>
 									I'm a computer science and programming
-									enthusiast with a passion for Software
-									Engineering and Game Development. At present
+									enthusiast with a passion for web and native
+									software engineering and the fundamentals of
+									game programming and design. At present
 									studying my second year of the
 									<i> Bachelor of Information Technology </i>
 									at Otago Polytechnic in New Zealand.
 								</strong>
 							</p>
 							<p>
-								This semester we're covering web-based software
-								and API development, relational database design
-								though to construction, and operating system
-								concepts and engineering.
+								This past semester we've covered web-based
+								software and API development, relational
+								database design though to construction, and
+								operating system concepts and scripting.
 							</p>
 							<p>
-								I'm right at home in C/C++, C#, and Typescript.
-								I use Vim - and emulators for Vim in IDEs such
-								as Visual Studio Code, and CLion. I work on
-								Windows 11 (primarily), and MacOS/Linux based
-								systems.
+								I'm right at home in languages including C/C++,
+								C#, and TypeScript. I Use Visual Studio for an
+								IDE, and Visual Studio Code with Vim for text
+								editing. I work on Windows 11 (primarily),
+								MacOS, and Linux based systems.
 							</p>
 							<p>
 								<i>
