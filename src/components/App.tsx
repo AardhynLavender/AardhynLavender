@@ -78,7 +78,7 @@ function App(): ReactElement {
 							role="button"
 							onClick={() => ScrollTo(references.upcoming)}
 						>
-							Upcoming
+							{/* Upcoming */}
 						</li>
 					</ul>
 				</section>
@@ -280,13 +280,13 @@ function App(): ReactElement {
 						</p>
 					</section>
 				</section>
-				<section id="upcoming" ref={references.upcoming}>
+				{/* <section id="upcoming" ref={references.upcoming}>
 					<h2>Upcoming</h2>
 					<section style={{ backgroundImage: `url(${upcoming})` }}>
 						<h2>Something's on its way</h2>
 						<p>And it's big. Real big.</p>
 					</section>
-				</section>
+				</section> */}
 			</main>
 			<footer>
 				<img src={whitelogo} />
