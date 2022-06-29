@@ -67,7 +67,7 @@ function App(): ReactElement {
 						</li>
 						<li>
 							<a
-								href="https://github.com/AardhynLavender/404"
+								href="https://github.com/AardhynLavender/React-CRUD"
 								target="_blank"
 								rel="noreferrer"
 							>
@@ -165,7 +165,7 @@ function App(): ReactElement {
 								<p>
 									Node.js REST API built with TypeScript,
 									Express, with data stored on MongoDB,
-									achieving a grade of 99.7<sup>%</sup>
+									achieving a grade of 99.25<sup>%</sup>
 									<br />
 									<br />
 									Provides standard CRUD operations,
