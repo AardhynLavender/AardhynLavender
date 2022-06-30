@@ -6,7 +6,7 @@ interface IProps {
 
 export const Footer = (props: IProps): ReactElement => (
 	<>
-		<img src="/assets/logo_w.png" />
+		<img src="/assets/logo_w.png" alt="my logo" />
 		{props.favicons}
 	</>
 );

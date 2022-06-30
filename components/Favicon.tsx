@@ -13,15 +13,20 @@ interface IProps {
 const FaviconSet = (props: IProps): ReactElement => {
 	return (
 		<section className="favicons">
-			{props.favicons.map((favicon: IFavicon) => {
+			{props.favicons.map((favicon: IFavicon, key: number) => {
 				const { image, onClick, url } = favicon;
 				const img: ReactElement = <img src={image} alt="icon link" />;
 				return !onClick && url ? (
-					<a href={url} target="_blank" rel="noreferrer">
+					<a key={key} href={url} target="_blank" rel="noreferrer">
 						{img}
 					</a>
 				) : (
-					<a onClick={onClick} target="_blank" rel="noreferrer">
+					<a
+						key={key}
+						onClick={onClick}
+						target="_blank"
+						rel="noreferrer"
+					>
 						{img}
 					</a>
 				);
