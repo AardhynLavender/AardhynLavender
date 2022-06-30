@@ -1,7 +1,6 @@
 import { ReactElement } from "react";
 import { ScrollTo } from "../utils/Scroll";
 import { Navigation } from "./Navigation";
-import react from "../assets/reactLogo.png";
 
 interface IProps {
 	references: Record<string, React.MutableRefObject<any>>;
@@ -31,7 +30,7 @@ export const Header = (props: IProps): ReactElement => {
 			<section className="details">
 				<ul>
 					<li>
-						<img src={react} alt="react.js logo" />
+						<img src="/assets/reactLogo.png" alt="react.js logo" />
 						<a
 							href="https://github.com/AardhynLavender/AardhynLavender"
 							target="_blank"

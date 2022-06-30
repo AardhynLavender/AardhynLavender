@@ -3,15 +3,13 @@ import { ReactElement } from "react";
 import SectionHeader from "./SectionHeader";
 import Project from "./Project";
 
-import upcoming from "../assets/upcoming.png";
-
 export const Present = (): ReactElement => (
 	<>
 		<SectionHeader heading="Present" subheading="What I'm working on" />
 		<section className="gallery">
 			<Project
 				name="SDL2 Pixel Game Engine"
-				image={upcoming}
+				image="/assets/upcoming.png"
 				content={
 					<p>
 						My side-project between assignments and semesters. A

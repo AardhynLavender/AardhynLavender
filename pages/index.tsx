@@ -1,22 +1,14 @@
 import React, { ReactElement, useEffect, useRef } from "react";
 import { ApplyViewportParallax, ScrollTo } from "../utils/Scroll";
-import FaviconSet from "./Favicon";
-
-// styling
-import "../style/app.scss";
-
-// assets
-import linkedin from "../assets/linkedin_logo.png";
-import github from "../assets/github_logo.png";
-import mail from "../assets/mail.png";
+import FaviconSet from "../components/Favicon";
 
 // Page regions
-import { Header } from "./Header";
-import { ProjectGallery } from "./ProjectGallery";
-import { About } from "./About";
-import { Contact } from "./Contact";
-import { Footer } from "./Footer";
-import { Present } from "./Present";
+import { Header } from "../components/Header";
+import { ProjectGallery } from "../components/ProjectGallery";
+import { About } from "../components/About";
+import { Contact } from "../components/Contact";
+import { Footer } from "../components/Footer";
+import { Present } from "../components/Present";
 
 function App(): ReactElement {
 	const references: Record<string, React.MutableRefObject<any>> = {
@@ -31,14 +23,14 @@ function App(): ReactElement {
 			favicons={[
 				{
 					url: "https://github.com/AardhynLavender",
-					image: github,
+					image: "/assets/github_logo.png",
 				},
 				{
 					url: "https://www.linkedin.com/in/aardhyn-lavender-521007226/",
-					image: linkedin,
+					image: "/assets/linkedin_logo.png",
 				},
 				{
-					image: mail,
+					image: "/assets/mail.png",
 					onClick: () => ScrollTo(references.contact),
 				},
 			]}

@@ -2,9 +2,6 @@ import { ReactElement } from "react";
 
 import Project from "./Project";
 
-import breakout from "../assets/breakout-project.png";
-import restApi from "../assets/restapi-project.png";
-import reactcrud from "../assets/reactcrud.png";
 import SectionHeader from "./SectionHeader";
 
 export const ProjectGallery = (): ReactElement => (
@@ -13,7 +10,7 @@ export const ProjectGallery = (): ReactElement => (
 		<section className="gallery">
 			<Project
 				name="Breakout"
-				image={breakout}
+				image="/assets/breakout-project.png"
 				url="https://github.com/AardhynLavender/WinFormsBreakout/"
 				content={
 					<p>
@@ -29,7 +26,7 @@ export const ProjectGallery = (): ReactElement => (
 			/>
 			<Project
 				name="REST API"
-				image={restApi}
+				image="/assets/restapi-project.png"
 				url="https://github.com/AardhynLavender/REST-API/"
 				content={
 					<p>
@@ -45,7 +42,7 @@ export const ProjectGallery = (): ReactElement => (
 			/>
 			<Project
 				name="React CRUD"
-				image={reactcrud}
+				image="/assets/reactcrud.png"
 				url="https://github.com/AardhynLavender/React-CRUD"
 				content={
 					<p>
