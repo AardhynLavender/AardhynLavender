@@ -208,57 +208,94 @@ body {
 
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+
 		gap: 10em;
 
-		width: calc(100% - 2em);
-		max-width: $contentWidth;
-		margin-inline: auto;
 		padding-block: 10em;
 
-		section {
-			&#present {
-				article {
-					background-color: lighten($background, 4%);
+		> section {
+			width: calc(100% - 2em);
+			max-width: $contentWidth;
 
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+
+			&#about {
+				article {
 					display: flex;
 					justify-content: space-between;
-					flex-direction: column;
+					gap: 1em;
+					flex-direction: row;
 
-					margin-top: 5em;
 					border-radius: 1em;
+
+					h3,
+					h4 {
+						margin: 0;
+						margin-bottom: 1em;
+					}
 
 					.favicons {
 						justify-content: flex-end;
 					}
 
-					.banner {
-						width: 100%;
-						height: 6em;
+					aside {
+						background-color: darken($background, 2%);
 
 						display: flex;
-						justify-content: center;
+						flex-direction: column;
+						gap: 2em;
+						align-items: center;
 
-						border-radius: 1em 1em 0 0;
+						width: 700px;
+						padding: 2em;
+
+						border-radius: 1em;
 						background-size: cover;
 						background-position: center bottom;
 
 						img {
 							border-radius: 50%;
-							width: 10em;
-							height: 10em;
-							margin-top: -5em;
+							width: 200px;
+							height: 200px;
+						}
+					}
+
+					@media screen and (max-width: 1200px) {
+						flex-direction: column;
+
+						aside {
+							flex-direction: row;
+
+							width: 100%;
+							box-sizing: border-box;
+							margin-inline: auto;
+
+							@media screen and (max-width: 600px) {
+								flex-direction: column;
+								img {
+									width: 100px;
+									height: 100px;
+								}
+							}
 						}
 					}
 
 					.content {
-						padding: 3em;
+						background-color: lighten($background, 4%);
+						border-radius: 1em;
+
+						padding: 2em;
 
 						display: flex;
 						flex-direction: column;
-						gap: 2em;
+						gap: 1em;
 
-						h3 {
-							font-style: italic;
+						ul {
+							margin: 0;
+							margin-bottom: 1em;
 						}
 					}
 
@@ -281,65 +318,64 @@ body {
 				}
 			}
 
-			&#projects {
+			.gallery {
 				display: flex;
-				flex-direction: column;
+				flex-direction: row;
+				flex-wrap: wrap;
+
+				padding: 1em;
+				border-radius: 2em;
 				gap: 1em;
 
-				.gallery {
-					display: flex;
-					flex-direction: row;
-					flex-wrap: wrap;
-					justify-content: center;
-					flex: 0 0;
-					gap: 1em;
+				background-color: darken($background, 2%);
 
-					// @media screen and (max-width: 1000px) {
-					// 	flex-direction: column;
-					// }
+				// @media screen and (max-width: 1000px) {
+				// 	flex-direction: column;
+				// }
 
-					// a direct decendant <article> OR <a>
-					> article,
-					> a {
-						width: calc(33.33% - 0.75em);
-						min-width: 300px;
+				// a direct decendant <article> OR <a>
+				> article,
+				> a {
+					width: calc(33.33% - 0.75em);
+					min-width: 300px;
 
-						@media screen and (max-width: 650px) {
-							min-width: 100%;
-						}
+					@media screen and (max-width: 650px) {
+						min-width: 100%;
+					}
 
-						height: 500px;
+					height: 500px;
 
-						background-color: lighten($background, 4%);
-						border-radius: 1em;
+					background-color: lighten($background, 4%);
+					border-radius: 1em;
 
-						.banner {
-							width: 100%;
-							height: 150px;
-							background-image: url("../assets/header-backdrop.jpg"); // default image
-							background-size: cover;
-							background-position: center center;
-							border-radius: 1em 1em 0 0;
-						}
+					.banner {
+						width: 100%;
+						height: 150px;
+						background-image: url("../assets/header-backdrop.jpg"); // default image
+						background-size: cover;
+						background-position: center center;
+						border-radius: 1em 1em 0 0;
+					}
 
-						.content {
-							padding: 1em;
-						}
+					.content {
+						padding: 1em;
+					}
 
-						box-sizing: border-box;
+					box-sizing: border-box;
 
-						transform: none;
-						transition: box-shadow 500ms ease-in-out,
-							transform 500ms ease-in-out;
-						&:hover {
-							transition: box-shadow 50ms ease-in-out,
-								transform 50ms ease-in-out;
-							transform: translateY(-5px);
-							box-shadow: 0 0 10px 1em darken($background, 2%);
-						}
+					transform: none;
+					transition: box-shadow 500ms ease-in-out,
+						transform 500ms ease-in-out;
+					&:hover {
+						transition: box-shadow 50ms ease-in-out,
+							transform 50ms ease-in-out;
+						transform: translateY(-5px);
+						box-shadow: 0 0 2em 1em darken($background, 4%);
 					}
 				}
+			}
 
+			&#projects {
 				a#more {
 					font-family: $stdfont;
 					font-weight: 600;
@@ -379,62 +415,6 @@ body {
 					}
 				}
 			}
-
-			&#upcoming {
-				display: flex;
-				flex-direction: column;
-
-				section {
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-
-					width: 100%;
-					height: 20em;
-					border-radius: 1em;
-					position: relative;
-
-					&::after {
-						content: "";
-						display: inline-block;
-						position: absolute;
-						border-radius: 1em;
-						top: 0;
-						left: 0;
-						width: 100%;
-						height: 100%;
-						background-image: linear-gradient(
-							to right,
-							#00000000,
-							#000000ff
-						);
-					}
-
-					background-position: center center;
-					background-size: cover;
-
-					box-sizing: border-box;
-					padding: 3em;
-
-					text-align: right;
-
-					h2 {
-						font-family: $stdparagraph;
-						z-index: 1;
-						margin: 0;
-						margin-bottom: 1em;
-						position: relative;
-						@media screen and (max-width: 600px) {
-							font-size: 1.3rem;
-						}
-					}
-
-					p {
-						position: relative;
-						z-index: 1;
-					}
-				}
-			}
 		}
 
 		h2 {
@@ -444,6 +424,13 @@ body {
 		}
 
 		h3 {
+			font-size: 1.1rem;
+			font-family: $stdfont;
+			color: darken($dark-foreground, 5%);
+			font-weight: 600;
+		}
+
+		h4 {
 			margin: 0 0 1em 0;
 			color: $accent;
 			font-size: 1.2rem;
@@ -451,7 +438,8 @@ body {
 			font-weight: 600;
 		}
 
-		p {
+		p,
+		li {
 			font-size: 1rem;
 			font-family: $stdparagraph;
 			color: $dark-foreground;

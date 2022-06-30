@@ -17,7 +17,7 @@ const Project = (props: IProps): ReactElement => {
 				}}
 			></div>
 			<section className="content">
-				<h3>{props.name}</h3>
+				<h4>{props.name}</h4>
 				{props.content}
 			</section>
 		</article>
