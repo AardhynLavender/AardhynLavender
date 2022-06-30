@@ -6,7 +6,6 @@ import FaviconSet from "./Favicon";
 import "../style/app.scss";
 
 // assets
-import upcoming from "../assets/upcoming.png";
 import linkedin from "../assets/linkedin_logo.png";
 import github from "../assets/github_logo.png";
 import mail from "../assets/mail.png";
@@ -17,7 +16,7 @@ import { ProjectGallery } from "./ProjectGallery";
 import { About } from "./About";
 import { Contact } from "./Contact";
 import { Footer } from "./Footer";
-import Project from "./Project";
+import { Present } from "./Present";
 
 function App(): ReactElement {
 	const references: Record<string, React.MutableRefObject<any>> = {
@@ -74,28 +73,7 @@ function App(): ReactElement {
 					<Contact />
 				</section>
 				<section id="present" ref={references.present}>
-					<h2>Present</h2>
-					<h3>What am I working on?</h3>
-					<section className="gallery">
-						<Project
-							name="SDL2 Pixel Game Engine"
-							image={upcoming}
-							content={
-								<p>
-									<i>My good ol' hobby side-project</i>
-									<br />
-									<br />
-									A homemade multiplatform 2D Pixel game
-									engine written in C++20 with SDL2.
-									<br />
-									<br />
-									You won't see a line of code for this one...
-									but stay tuned for a demo game should I find
-									enough time to finish it.
-								</p>
-							}
-						/>
-					</section>
+					<Present />
 				</section>
 			</main>
 			<footer>

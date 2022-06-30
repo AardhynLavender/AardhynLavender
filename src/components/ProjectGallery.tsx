@@ -5,13 +5,11 @@ import Project from "./Project";
 import breakout from "../assets/breakout-project.png";
 import restApi from "../assets/restapi-project.png";
 import reactcrud from "../assets/reactcrud.png";
+import SectionHeader from "./SectionHeader";
 
 export const ProjectGallery = (): ReactElement => (
 	<>
-		<div>
-			<h2>Projects</h2>
-			<h3>What have I done?</h3>
-		</div>
+		<SectionHeader heading="Projects" subheading="What have I done" />
 		<section className="gallery">
 			<Project
 				name="Breakout"

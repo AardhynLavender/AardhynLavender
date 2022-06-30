@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
+import SectionHeader from "./SectionHeader";
 
 export const Contact = (): ReactElement => (
 	<>
-		<h2>Contact</h2>
-		<h3>Say hello?</h3>
+		<SectionHeader heading="Contact" subheading="Say Hello" />
 		<section>
 			<p>
 				A <b>Contact Form</b> would look real nice here...
