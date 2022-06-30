@@ -1,7 +1,5 @@
 import { ReactElement } from "react";
 
-import headerTwo from "../assets/header-backdrop-two.jpg";
-import portrait from "../assets/portrait.png";
 import SectionHeader from "./SectionHeader";
 
 export const About = (): ReactElement => (
@@ -12,7 +10,7 @@ export const About = (): ReactElement => (
 		/>
 		<article>
 			<aside>
-				<img src={portrait} alt="Its me!" />
+				<img src="assets/portrait.png" alt="Its me!" />
 				<div>
 					<h4>Howdy!</h4>
 					<p>
