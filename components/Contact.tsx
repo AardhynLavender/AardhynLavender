@@ -36,7 +36,7 @@ export const Contact = (): ReactElement => {
 			);
 
 			alert("Success! I look forward to reading your message!");
-
+			console.log(responce);
 			SetName("");
 			SetSubject("");
 			SetMessage("");

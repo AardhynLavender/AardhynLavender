@@ -403,12 +403,46 @@ body {
 			}
 
 			&#contact {
-				section {
+				form {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 1em;
+
 					background-color: lighten($background, 4%);
 
-					padding: 3em;
+					padding: 1em;
+					border-radius: 2em;
 
-					border-radius: 1em;
+					button,
+					textarea,
+					input {
+						background-color: $dark-foreground;
+
+						border: none;
+						border-radius: 1em;
+
+						padding: 1em;
+					}
+
+					input,
+					textarea {
+						font-family: $stdfont;
+						font-weight: 600;
+						font-size: 0.8rem;
+					}
+
+					textarea {
+						min-width: 50%;
+						max-width: calc(100% - 2em);
+						max-height: 20em;
+						min-height: 10em;
+					}
+
+					button {
+						margin-top: 1em;
+						width: 8em;
+					}
 
 					@media screen and (max-width: 600px) {
 						padding: 2em;
