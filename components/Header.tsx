@@ -1,3 +1,4 @@
+import React from "react";
 import { ReactElement } from "react";
 import { ScrollTo } from "../utils/Scroll";
 import { Navigation } from "./Navigation";

@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 
 import SectionHeader from "./SectionHeader";
 import Project from "./Project";
+import React from "react";
 
 export const Present = (): ReactElement => (
 	<>
