@@ -7,14 +7,13 @@ interface IFavicon {
 	onClick?: () => void;
 }
 
-interface IProps {
+const FaviconSet = ({
+	favicons,
+}: {
 	favicons: Array<IFavicon>;
-}
-
-const FaviconSet = (props: IProps): ReactElement => (
+}): ReactElement => (
 	<section className="favicons">
-		{props.favicons.map((favicon: IFavicon, key: number) => {
-			const { image, onClick, url } = favicon;
+		{favicons.map(({ image, onClick, url }: IFavicon, key: number) => {
 			const img: ReactElement = <img src={image} alt="icon link" />;
 			return !onClick && url ? (
 				<a key={key} href={url} target="_blank" rel="noreferrer">

@@ -3,10 +3,19 @@ import { ReactElement } from "react";
 import SectionHeader from "./SectionHeader";
 import Project from "./Project";
 import React from "react";
+import { References } from "../util/useReferences";
 
-export const Present = (): ReactElement => (
-	<>
-		<SectionHeader heading="Present" subheading="What I'm working on" />
+export const Present = ({
+	references,
+}: {
+	references: References;
+}): ReactElement => (
+	<section id="present">
+		<SectionHeader
+			heading="Present"
+			subheading="What I'm working on"
+			references={references}
+		/>
 		<section className="gallery">
 			<Project
 				name="SDL2 Pixel Game Engine"
@@ -25,5 +34,5 @@ export const Present = (): ReactElement => (
 				}
 			/>
 		</section>
-	</>
+	</section>
 );

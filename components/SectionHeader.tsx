@@ -1,15 +1,19 @@
 import React from "react";
-import { ReactElement } from "react";
+import { References } from "../util/useReferences";
+import useReferences from "../util/useReferences";
 
-interface IProps {
+const SectionHeader = ({
+	heading,
+	subheading,
+	references,
+}: {
 	heading: string;
 	subheading?: string;
-}
-
-const SectionHeader = (props: IProps) => (
-	<div className="sectionHead">
-		<h2>{props.heading}</h2>
-		{props.subheading ? <h3>{props.subheading}</h3> : <></>}
+	references: References;
+}): JSX.Element => (
+	<div className="sectionHead" ref={references[heading.toLowerCase()]}>
+		<h2>{heading}</h2>
+		{subheading ? <h3>{subheading}</h3> : <></>}
 	</div>
 );
 

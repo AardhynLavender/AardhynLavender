@@ -1,30 +1,34 @@
 import React from "react";
 import { ReactElement } from "react";
+import { s } from "../config/stitches.config";
 
-interface IProps {
+const Project = ({
+	name,
+	image,
+	url,
+	content,
+}: {
 	name: string;
 	image: string;
 	url?: string;
 	content: ReactElement;
-}
-
-const Project = (props: IProps): ReactElement => {
+}): ReactElement => {
 	const article: ReactElement = (
-		<article id={props.name}>
-			<div
+		<article id={name}>
+			<s.div
 				className="banner"
 				style={{
-					backgroundImage: `url(${props.image})`,
+					backgroundImage: `url(${image})`,
 				}}
-			></div>
+			></s.div>
 			<section className="content">
-				<h4>{props.name}</h4>
-				{props.content}
+				<h4>{name}</h4>
+				{content}
 			</section>
 		</article>
 	);
-	return props.url ? (
-		<a href={props.url} target="_blank" rel="noreferrer">
+	return url ? (
+		<a href={url} target="_blank" rel="noreferrer">
 			{article}
 		</a>
 	) : (

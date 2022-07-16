@@ -1,13 +1,15 @@
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
+import useReferences, { References } from "../util/useReferences";
+
 import { ILink } from "../utils/Hyperlink";
 import { ScrollTo } from "../utils/Scroll";
 import { ToSentenceCase } from "../utils/String";
 
-interface IProps {
-	references: Record<string, React.MutableRefObject<any>>;
-}
-
-export const Navigation = (props: IProps): ReactElement => {
+export const Navigation = ({
+	references,
+}: {
+	references: References;
+}): ReactElement => {
 	const links: Array<ILink> = [
 		{
 			name: "breakout",
@@ -34,7 +36,7 @@ export const Navigation = (props: IProps): ReactElement => {
 			<li
 				className="highlight"
 				role="button"
-				onClick={() => ScrollTo(props.references.present)}
+				onClick={() => ScrollTo(references.present)}
 			>
 				Present
 			</li>

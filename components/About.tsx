@@ -1,13 +1,18 @@
 import React from "react";
 import { ReactElement } from "react";
-
+import { References } from "../util/useReferences";
 import SectionHeader from "./SectionHeader";
 
-export const About = (): ReactElement => (
-	<>
+export const About = ({
+	references,
+}: {
+	references: References;
+}): ReactElement => (
+	<section id="about">
 		<SectionHeader
 			heading="About"
 			subheading="Just a little about myself"
+			references={references}
 		/>
 		<article>
 			<aside>
@@ -78,5 +83,5 @@ export const About = (): ReactElement => (
 				</div>
 			</section>
 		</article>
-	</>
+	</section>
 );

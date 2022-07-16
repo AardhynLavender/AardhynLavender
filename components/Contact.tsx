@@ -1,9 +1,18 @@
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
+import { References } from "../util/useReferences";
 import SectionHeader from "./SectionHeader";
 
-export const Contact = (): ReactElement => (
-	<>
-		<SectionHeader heading="Contact" subheading="Say Hello" />
+export const Contact = ({
+	references,
+}: {
+	references: References;
+}): ReactElement => (
+	<section id="contact">
+		<SectionHeader
+			heading="Contact"
+			subheading="Say Hello"
+			references={references}
+		/>
 		<section>
 			<p>
 				A <b>Contact Form</b> would look real nice here...
@@ -13,5 +22,5 @@ export const Contact = (): ReactElement => (
 				<i>( Psst! its on it's way... )</i>
 			</p>
 		</section>
-	</>
+	</section>
 );

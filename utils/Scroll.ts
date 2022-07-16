@@ -1,5 +1,7 @@
-export const ScrollTo = (ref: React.MutableRefObject<any>): void =>
+export const ScrollTo = (ref: React.MutableRefObject<any>): void => {
+	console.log(ref);
 	ref?.current?.scrollIntoView();
+};
 
 export const ApplyViewportParallax = (
 	scrolled: number,

@@ -1,14 +1,15 @@
 import React from "react";
-import { ReactElement } from "react";
+import { ReactElement, MutableRefObject } from "react";
+import { s } from "../config/stitches.config";
+import { References } from "../util/useReferences";
 import { ScrollTo } from "../utils/Scroll";
 import { Navigation } from "./Navigation";
 
-interface IProps {
-	references: Record<string, React.MutableRefObject<any>>;
-}
-
-export const Header = (props: IProps): ReactElement => {
-	const { references } = props;
+export const Header = ({
+	references,
+}: {
+	references: References;
+}): ReactElement => {
 	return (
 		<>
 			<section className="projects">
@@ -42,7 +43,7 @@ export const Header = (props: IProps): ReactElement => {
 					</li>
 					{/* <li>
 						<p>BIT</p>
-						<span id="progression"></span>
+						<s.span id="progression"></s.span>
 					</li> */}
 					<li>
 						<a

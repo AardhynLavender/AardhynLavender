@@ -1,13 +1,22 @@
 import React from "react";
 import { ReactElement } from "react";
+import { References } from "../util/useReferences";
 
 import Project from "./Project";
 
 import SectionHeader from "./SectionHeader";
 
-export const ProjectGallery = (): ReactElement => (
-	<>
-		<SectionHeader heading="Projects" subheading="What have I done" />
+export const Projects = ({
+	references,
+}: {
+	references: References;
+}): ReactElement => (
+	<section id="projects">
+		<SectionHeader
+			heading="Projects"
+			subheading="What have I done"
+			references={references}
+		/>
 		<section className="gallery">
 			<Project
 				name="Breakout"
@@ -66,5 +75,5 @@ export const ProjectGallery = (): ReactElement => (
 		>
 			More
 		</a>
-	</>
+	</section>
 );
