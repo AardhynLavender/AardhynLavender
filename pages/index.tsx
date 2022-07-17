@@ -9,20 +9,11 @@ import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
 import { Present } from "../components/Present";
 import useReferences from "../utils/useReferences";
+import { s } from "../config/stitches.config";
+import useScrollEffect from "../utils/useScrollEffect";
 
 function App(): ReactElement {
-	useEffect(() => {
-		const SCROLL_FACTOR: number = 0.3;
-		const onScroll = (e: Event): void => {
-			ApplyViewportParallax(window.scrollY, "header", SCROLL_FACTOR);
-			// ImageHandleScroll(window.scrollY, "section#upcoming section");
-		};
-		window.addEventListener("scroll", onScroll);
-		return () => {
-			window.removeEventListener("scroll", onScroll);
-		};
-	}, []);
-
+	useScrollEffect();
 	const references = useReferences();
 
 	return (
@@ -37,6 +28,13 @@ function App(): ReactElement {
 				<Present references={references} />
 			</main>
 			<footer>
+				<s.div
+					css={{
+						fColor: "accent",
+					}}
+				>
+					some text
+				</s.div>
 				<Footer references={references} />
 			</footer>
 		</div>

@@ -1,0 +1,12 @@
+:root {
+	--background: #211a29;
+	--background-darker: #000000; /* set me */
+	--background-lighter: #000000; /* set me */
+	--accent: #009ddb;
+	--foreground: #ffffff;
+	--foreground-darker: #c3c3c3;
+	--foreground-darkest: #000000; /* set me */
+}
+
+:root[data-theme="light"] {
+}

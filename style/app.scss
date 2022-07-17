@@ -3,43 +3,13 @@
 
 $contentWidth: 1200px;
 
-:root {
-	font-size: 1em;
-}
-
 ::selection {
 	color: lighten($accent, 20%);
 	text-shadow: 0 0 5px $accent;
 }
 
-a {
-	text-decoration: none;
-	color: inherit;
-}
-
-p {
-	padding: 0;
-	margin: 0;
-}
-
-html {
-	scroll-behavior: smooth;
-}
-
-* {
-	scrollbar-width: none;
-	overflow: -moz-scrollbars-none;
-	-ms-overflow-style: none;
-	&::-webkit-scrollbar {
-		display: none;
-	}
-}
-
 body {
 	background-color: $background;
-
-	margin: 0;
-	padding: 0;
 
 	header {
 		display: flex;
@@ -75,9 +45,6 @@ body {
 			}
 
 			ul {
-				padding: 0;
-				margin: 0;
-
 				display: flex;
 				flex-direction: row;
 				gap: 2em;
