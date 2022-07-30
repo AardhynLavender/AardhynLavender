@@ -4,7 +4,7 @@
 
 <br/>
 
-### [< My Site >](https://aardhyn-lavender.onrender.com/) <sup>_Now Live_</sup>
+### [< My Site >](https://aardhyn.dev/) <sup>_Now Live_</sup>
 
 <br/>
 
